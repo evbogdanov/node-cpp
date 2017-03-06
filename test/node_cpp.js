@@ -42,4 +42,13 @@ describe('node_cpp', () => {
             assert.equal(node_cpp.twice(10), 20)
         })
     })
+
+    describe('twiceAsync', () => {
+        it('hopefully should work', (done) => {
+            node_cpp.twiceAsync(10, twice => {
+                assert.equal(twice, 20)
+                done()
+            })
+        })
+    })
 })
